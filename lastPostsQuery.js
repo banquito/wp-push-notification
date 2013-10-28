@@ -4,4 +4,4 @@ var LastPostsQuery = function() {
   };
 };
 
-module.exports = new LastPostsQuery();
+module.exports = LastPostsQuery;
