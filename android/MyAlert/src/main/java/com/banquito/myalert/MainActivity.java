@@ -15,8 +15,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Parse.initialize(this, "Wqn0fChKZPtOQrKKYFySNRyFT7iIxOV3gYbCtB3t", "JzF6NWK6O7m3Jh8X8knRVSyOl5fhFcYsJWBJvt0y");
-        PushService.setDefaultPushCallback(this, MainActivity.class);
+        //PushService.setDefaultPushCallback(this, MainActivity.class);
+        PushService.subscribe(getApplicationContext(), "all", MainActivity.class);
+        ParseAnalytics.trackAppOpened(getIntent());
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 
