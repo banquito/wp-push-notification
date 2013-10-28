@@ -1,6 +1,11 @@
+var rest = require('restler');
+
 var LastPostsQuery = function() {
   this.getAll = function(callback) {
-    callback({ title: "hola mundo"});
+    var urlPosts = 'http://www.elgalpondebanquito.com.ar/wp-json.php/posts';
+    rest.get(urlPosts).on('complete', function(posts) {
+      callback(posts[0]);
+    });
   };
 };
 
