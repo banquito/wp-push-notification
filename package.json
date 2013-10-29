@@ -1,0 +1,7 @@
+{
+  "name": "wp-push-notification",
+  "dependencies" : {
+    "parse-push": "0.0.3",
+    "restler": "2.0.1"
+  }
+}
